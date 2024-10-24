@@ -1,5 +1,5 @@
 {
-  "name": "sergo920/ebay-sdk-php",
+  "name": "gaiterjones/ebay-sdk-php",
   "description": "An eBay SDK for PHP. Use the eBay API in your PHP projects.",
   "keywords": ["ebay", "api", "sdk"],
   "homepage": "http://devbay.net/",
@@ -16,9 +16,11 @@
     "issues": "https://github.com/davidtsadler/ebay-sdk-php/issues"
   },
   "require": {
-    "php": ">=5.5",
-    "guzzlehttp/guzzle": "~6.0",
-    "guzzlehttp/psr7": "~1.0",
+    "php-64bit": "^7.2 || ^8.0",
+    "ext-curl": "*",
+    "ext-libxml": "*",
+    "guzzlehttp/guzzle": "^6.0 || ^7.0",
+    "guzzlehttp/psr7": "^1.7 || ^2.0",
     "guzzlehttp/promises": "^1.1",
     "ebay/digital-signature-php-sdk": "^1.0"
   },
