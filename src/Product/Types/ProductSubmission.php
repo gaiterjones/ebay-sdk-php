@@ -58,9 +58,15 @@ class ProductSubmission extends \DTS\eBaySDK\Product\Types\BaseServiceRequest
 
         parent::__construct($parentValues);
 
-        if (!array_key_exists(__CLASS__, self::$properties)) {
-            self::$properties[__CLASS__] = array_merge(self::$properties[get_parent_class()], self::$propertyTypes);
-        }
+        $parentClass = get_parent_class(static::class);
+
+if (!array_key_exists(__CLASS__, self::$properties)) {
+    if (isset(self::$properties[$parentClass])) {
+        self::$properties[__CLASS__] = array_merge(self::$properties[$parentClass], self::$propertyTypes);
+    } else {
+        self::$properties[__CLASS__] = self::$propertyTypes;
+    }
+}
 
         if (!array_key_exists(__CLASS__, self::$xmlNamespaces)) {
             self::$xmlNamespaces[__CLASS__] = 'xmlns="http://www.ebay.com/marketplace/marketplacecatalog/v1/services"';
